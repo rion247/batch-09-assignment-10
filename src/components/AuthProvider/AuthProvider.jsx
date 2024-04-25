@@ -18,26 +18,26 @@ const AuthProvider = ({ children }) => {
 
     const createUserManually = (email, password) => {
         SetLoading(true);
-        createUserWithEmailAndPassword(auth, email, password);
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const signInUserManually = (email, password) => {
         SetLoading(true);
-        signInWithEmailAndPassword(auth, email, password);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     const googleProvider = new GoogleAuthProvider();
 
     const googleLogIn = () => {
         SetLoading(true);
-        signInWithPopup(auth, googleProvider);
+        return signInWithPopup(auth, googleProvider);
     }
 
     const gitHubProvider = new GithubAuthProvider();
 
     const gitHubLogIn = () => {
         SetLoading(true);
-        signInWithPopup(auth, gitHubProvider)
+        return signInWithPopup(auth, gitHubProvider)
     }
 
     useEffect(() => {
@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
 
     const updateUserProfile = (name, photo) => {
 
-        updateProfile(auth.currentUser, {
+        return updateProfile(auth.currentUser, {
             displayName: name, 
             photoURL: photo,
         });
