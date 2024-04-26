@@ -8,9 +8,12 @@ export default {
     extend: {
       fontFamily: {
         poppins: 'Poppins, sans-serif',
-        raleway: 'Raleway, sans-serif', 
+        raleway: 'Raleway, sans-serif',
       }
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "synthwave"],
+  },
 }
