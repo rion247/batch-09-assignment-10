@@ -24,7 +24,6 @@ const Register = () => {
     const onSubmit = (data) => {
 
         const { name, email, photoURL, password } = data;
-        console.log(data, name, email, photoURL, password);
 
         if (password.length < 6) {
             return toast('Sorry!!!Six character password required.');

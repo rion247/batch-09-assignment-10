@@ -2,8 +2,15 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import userPic from "../../../src/assets/user.png";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Loader from "../Loader/Loader";
+import { toast } from "react-toastify";
 
 const NavBar = () => {
+
+    const { user, loading, userSignOut, } = useContext(AuthContext);
+    console.log(user);
 
     const [theme, SetTheme] = useState('light');
 
@@ -25,6 +32,19 @@ const NavBar = () => {
             SetTheme('light');
         }
 
+    }
+
+    if (loading) {
+        return <Loader></Loader>
+    }
+
+    const handleLogOutButton = () => {
+        userSignOut()
+            .then(() => {
+                toast('User Logout successful.');
+            }).catch((error) => {
+                toast(error);
+            });
     }
 
     const links = <>
@@ -92,18 +112,19 @@ const NavBar = () => {
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
                             <div className="w-6 md:w-8 xl:w-10 rounded-full">
-                                <img alt="...Loading" src={userPic} />
+                                {
+                                    user ? <img alt="...Loading" src={user.photoURL} /> : <img alt="...Loading" src={userPic} />
+                                }
                             </div>
                         </div>
-                        <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-48 md:w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Logout</a></li>
-                        </ul>
+
+                        {
+                            user && <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-48 md:w-52">
+                                <li><Link to={`/updateProfile/:${user.email}`}>Update Profile</Link></li>
+                                <li onClick={handleLogOutButton}><a>Logout</a></li>
+                            </ul>
+                        }
+
                     </div>
 
                     <Link to="/logIn" className="px-2 md:px-3 xl:px-6 py-1 md:py-2 bg-green-500 hover:bg-green-600 text-white rounded md:rounded lg:rounded-md xl:rounded-lg text-xs md:text-sm  xl:text-lg uppercase">LogIn</Link>

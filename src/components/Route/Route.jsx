@@ -9,6 +9,7 @@ import AddCraftItem from './../AddCraftItem/AddCraftItem';
 import MyArtAndCraftList from './../MyArtAndCraftList/MyArtAndCraftList';
 import LogIn from './../LogIn/LogIn';
 import Register from './../Register/Register';
+import UpdateProfile from "../UpdateProfile/UpdateProfile";
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/updateProfile",
+          element: <UpdateProfile />,
         },
       ],
     },
