@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         poppins: 'Poppins, sans-serif',
         raleway: 'Raleway, sans-serif',
-      }
+      },      
     },
   },
   plugins: [require("daisyui")],
