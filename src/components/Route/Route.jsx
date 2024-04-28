@@ -11,6 +11,7 @@ import LogIn from './../LogIn/LogIn';
 import Register from './../Register/Register';
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CraftViewDetailsPage from "../CraftItemsSection/CraftViewDetailsPage";
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,11 @@ export const router = createBrowserRouter([
         {
           path: "/updateProfile",
           element: <UpdateProfile />,
+        },
+        {
+          path: "/craftItem/:id",
+          element: <CraftViewDetailsPage />,
+          loader: ({params})=> fetch(`http://localhost:5000/crafts/${params.id}`)
         },
       ],
     },

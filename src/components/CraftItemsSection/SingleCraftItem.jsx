@@ -26,7 +26,7 @@ const SingleCraftItem = ({ item }) => {
                         <p>{itemShortDescription.slice(0,152)}</p>
                     </div>
 
-                    <Link className='py-2 w-full bg-sky-900 hover:bg-sky-800 text-white text-center mt-8' to={`item/:${_id}`}>View Details</Link>
+                    <Link className='py-2 w-full bg-sky-900 hover:bg-sky-800 text-white text-center mt-8' to={`craftItem/${_id}`}>View Details</Link>
 
                 </div>
 
