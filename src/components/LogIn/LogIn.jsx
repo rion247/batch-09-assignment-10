@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import logInPagePic from '../../../src/assets/logIn.jpg'
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from './../AuthProvider/AuthProvider';
@@ -9,6 +9,9 @@ import { toast } from "react-toastify";
 const LogIn = () => {
 
     const { signInUserManually, googleLogIn, gitHubLogIn } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -25,6 +28,7 @@ const LogIn = () => {
         signInUserManually(email, password)
             .then((result) => {
                 toast.success('Congratulation!!! User Login Succesful.');
+                navigate(location?.state ? location.state : '/');
                 console.log(result.user);
             })
             .catch((error) => {
@@ -37,6 +41,7 @@ const LogIn = () => {
         googleLogIn()
             .then((result) => {
                 toast.success('Congratulation!!! Google Login Succesful.');
+                navigate(location?.state ? location.state : '/');
                 console.log(result.user);
             }).catch((error) => {
                 console.log(error.message);
@@ -47,6 +52,7 @@ const LogIn = () => {
         gitHubLogIn()
             .then((result) => {
                 toast.success('Congratulation!!! GitHub Login Succesful.');
+                navigate(location?.state ? location.state : '/');
                 console.log(result.user);
             }).catch((error) => {
                 console.log(error.message);

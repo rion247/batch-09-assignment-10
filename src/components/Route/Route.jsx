@@ -10,6 +10,7 @@ import MyArtAndCraftList from './../MyArtAndCraftList/MyArtAndCraftList';
 import LogIn from './../LogIn/LogIn';
 import Register from './../Register/Register';
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/addCraftItem",
-          element: <AddCraftItem />,
+          element: <PrivateRoute><AddCraftItem /></PrivateRoute>,
         },
         {
           path: "/myArtAndCraftList",

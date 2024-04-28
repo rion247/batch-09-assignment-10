@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import HeroBanner from "../HeroBanner/HeroBanner";
+import CraftItemsSection from "../CraftItemsSection/CraftItemsSection";
 
 const Home = () => {
     return (
@@ -12,6 +13,8 @@ const Home = () => {
             </Helmet>
 
             <HeroBanner></HeroBanner>
+
+            <CraftItemsSection/>
 
         </div>
     );

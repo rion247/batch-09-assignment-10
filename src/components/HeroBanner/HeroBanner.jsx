@@ -46,7 +46,6 @@ const HeroBanner = () => {
                                     <button className='hover:bg-rose-500 hover:border-transparent border border-white px-2 md:px-4 lg:px-6 py-2 text-sm md:text-base font-semibold rounded-sm md:rounded lg:rounded-md font-raleway'>LEARN MORE</button>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>

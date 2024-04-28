@@ -127,7 +127,7 @@ const NavBar = () => {
 
                     </div>
 
-                    <Link to="/logIn" className="px-2 md:px-3 xl:px-6 py-1 md:py-2 bg-green-500 hover:bg-green-600 text-white rounded md:rounded lg:rounded-md xl:rounded-lg text-xs md:text-sm  xl:text-lg uppercase">LogIn</Link>
+                    <Link to="/logIn" className={`px-2 ${user ? 'hidden': 'flex'} md:px-3 xl:px-6 py-1 md:py-2 bg-green-500 hover:bg-green-600 text-white rounded md:rounded lg:rounded-md xl:rounded-lg text-xs md:text-sm  xl:text-lg uppercase`}>LogIn</Link>
                     <Link to="/register" className="px-2 md:px-3 xl:px-6 py-1 md:py-2 bg-sky-900 hover:bg-sky-950 text-white rounded md:rounded lg:rounded-md xl:rounded-lg text-xs md:text-sm  xl:text-lg uppercase">Register</Link>
                 </div>
 
