@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import MainLayOut from "../MainLayOut/MainLayOut";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
@@ -14,44 +14,46 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CraftViewDetailsPage from "../CraftItemsSection/CraftViewDetailsPage";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayOut />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/allArtAndCraftItems",
-          element: <AllArtAndCraftItems />,
-        },
-        {
-          path: "/addCraftItem",
-          element: <PrivateRoute><AddCraftItem /></PrivateRoute>,
-        },
-        {
-          path: "/myArtAndCraftList",
-          element: <MyArtAndCraftList />,
-        },
-        {
-          path: "/logIn",
-          element: <LogIn />,
-        },
-        {
-          path: "/register",
-          element: <Register />,
-        },
-        {
-          path: "/updateProfile",
-          element: <UpdateProfile />,
-        },
-        {
-          path: "/craftItem/:id",
-          element: <CraftViewDetailsPage />,
-          loader: ({params})=> fetch(`http://localhost:5000/crafts/${params.id}`)
-        },
-      ],
-    },
-  ]);
+  {
+    path: "/",
+    element: <MainLayOut />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/allArtAndCraftItems",
+        element: <AllArtAndCraftItems />,
+        loader: () => fetch(`http://localhost:5000/crafts`),
+      },
+      {
+        path: "/addCraftItem",
+        element: <PrivateRoute><AddCraftItem /></PrivateRoute>,
+      },
+      {
+        path: "/myArtAndCraftList",
+        element: <MyArtAndCraftList />,
+
+      },
+      {
+        path: "/logIn",
+        element: <LogIn />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/updateProfile",
+        element: <UpdateProfile />,
+      },
+      {
+        path: "/craftItem/:id",
+        element: <PrivateRoute><CraftViewDetailsPage /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`)
+      },
+    ],
+  },
+]);

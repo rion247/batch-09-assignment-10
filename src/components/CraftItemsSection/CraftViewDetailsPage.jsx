@@ -10,7 +10,7 @@ const CraftViewDetailsPage = () => {
         <div className="max-w-[350px] p-4 mx-auto md:max-w-xl lg:max-w-4xl xl:max-w-7xl  mt-4 md:mt-6 lg:mt-8 xl:mt-32 font-poppins text-black mb-16 md:mb-20 lg:mb-32 xl:mb-40">
 
             <a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
-                <img src={itemImageURL} alt="...Loading" className="object-cover w-full h-48 md:h-60 lg:h-full rounded lg:col-span-7 dark:bg-gray-500" />
+                <img src={itemImageURL} alt="...Loading" className="object-cover w-full h-48 md:h-60 lg:h-full xl:h-[764px] rounded lg:col-span-7 dark:bg-gray-500" />
                 <div className="p-6 space-y-4 lg:col-span-5">
 
                     <span className="text-sm text-neutral-600 italic">Product ID: {_id}</span>
