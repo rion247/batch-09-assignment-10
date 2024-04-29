@@ -1,6 +1,7 @@
 
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 const AddCraftItem = () => {
 
     const {
@@ -40,6 +41,10 @@ const AddCraftItem = () => {
 
     return (
         <div className="w-full max-w-80 p-4 mx-auto md:max-w-xl lg:max-w-4xl xl:max-w-7xl md:p-12 rounded-md shadow sm:p-8 border border-neutral-300 text-black mt-4 md:mt-6 lg:mt-8 xl:mt-12 font-poppins mb-40">
+
+            <Helmet>
+                <title>Craft Planet | Add Craft Item Page</title>
+            </Helmet>
 
             <h2 className="mb-12 text-base md:text-2xl xl:text-3xl font-bold text-center">Please Fill the Form to Add Craft Item</h2>
 
@@ -140,7 +145,6 @@ const AddCraftItem = () => {
                 <button type="submit" className="w-full px-8 py-3 font-medium rounded-md bg-sky-900 hover:bg-sky-800 text-white text-sm md:text-base lg:text-lg">Add New Craft Item</button>
 
             </form >
-
 
         </div >
     );

@@ -119,8 +119,8 @@ const NavBar = () => {
                         </div>
 
                         {
-                            user && <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-48 md:w-52">
-                                <li><Link to={`/updateProfile/:${user.email}`}>Update Profile</Link></li>
+                            user && <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-36 md:w-52">
+                                <li><a>{user.displayName}</a></li>
                                 <li onClick={handleLogOutButton}><a>Logout</a></li>
                             </ul>
                         }

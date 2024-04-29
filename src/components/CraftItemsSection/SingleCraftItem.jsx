@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SingleCraftItem = ({ item }) => {
 
-    console.log(item);
+    // console.log(item);
 
     const { itemName, itemImageURL, itemShortDescription, itemSubcategory, _id } = item;
 

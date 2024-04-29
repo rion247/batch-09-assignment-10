@@ -12,6 +12,7 @@ import Register from './../Register/Register';
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CraftViewDetailsPage from "../CraftItemsSection/CraftViewDetailsPage";
+import UpdateUserProfile from './../UpdateUserProfile/UpdateUserProfile';
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
       {
         path: "/allArtAndCraftItems",
         element: <AllArtAndCraftItems />,
-        loader: () => fetch(`http://localhost:5000/crafts`),
+        loader: () => fetch('http://localhost:5000/crafts'),
       },
       {
         path: "/addCraftItem",
@@ -34,8 +35,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myArtAndCraftList",
-        element: <MyArtAndCraftList />,
-
+        element: <PrivateRoute><MyArtAndCraftList /></PrivateRoute>,
       },
       {
         path: "/logIn",
@@ -46,14 +46,20 @@ export const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/updateProfile",
-        element: <UpdateProfile />,
+        path: "/updateCraftItems/:id",
+        element: <PrivateRoute><UpdateProfile /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`),
+      },
+      {
+        path: "/updateUserProfile/:email",
+        element: <UpdateUserProfile />,
       },
       {
         path: "/craftItem/:id",
         element: <PrivateRoute><CraftViewDetailsPage /></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`)
       },
+
     ],
   },
 ]);
