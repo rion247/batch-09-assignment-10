@@ -12,7 +12,7 @@ const MyArtAndCraftList = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/craft/${user.email}`)
+        fetch(`https://art-and-craft-store-server-side.vercel.app/craft/${user.email}`)
             .then(response => response.json())
             .then(json => {
                 SetItems(json);

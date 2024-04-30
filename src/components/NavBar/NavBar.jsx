@@ -1,15 +1,19 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import userPic from "../../../src/assets/user.png";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Loader from "../Loader/Loader";
 import { toast } from "react-toastify";
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip';
 
 const NavBar = () => {
 
     const { user, loading, userSignOut, } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const [theme, SetTheme] = useState('light');
 
@@ -41,19 +45,24 @@ const NavBar = () => {
         userSignOut()
             .then(() => {
                 toast('User Logout successful.');
+                navigate('/logIn');
             }).catch((error) => {
                 toast(error);
             });
     }
 
     const links = <>
-        <NavLink className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
-        } to="/">Home</NavLink>
-        <NavLink className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
+        <NavLink data-tooltip-id="my-tooltip" data-tooltip-place="bottom"
+            data-tooltip-content="Home" className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
+            } to="/">Home</NavLink>
+        <NavLink data-tooltip-id="my-tooltip" data-tooltip-place="bottom"
+            data-tooltip-content="All Art & Craft Items" className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
         } to="/allArtAndCraftItems">All Art & Craft Items</NavLink>
-        <NavLink className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
+        <NavLink data-tooltip-id="my-tooltip" data-tooltip-place="bottom"
+            data-tooltip-content="Add Craft Item" className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
         } to="/addCraftItem">Add Craft Item</NavLink>
-        <NavLink className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
+        <NavLink data-tooltip-id="my-tooltip" data-tooltip-place="bottom"
+            data-tooltip-content="My Art & Craft List" className={({ isActive }) => isActive ? "bg-sky-900 text-white px-2 lg:px-3 xl:px-4 py-2 rounded font-medium" : "bg-transparent px-2 lg:px-3 xl:px-4 py-2 rounded"
         } to="/myArtAndCraftList">My Art & Craft List</NavLink>
 
     </>
@@ -127,11 +136,13 @@ const NavBar = () => {
 
                     </div>
 
-                    <Link to="/logIn" className={`px-2 ${user ? 'hidden': 'flex'} md:px-3 xl:px-6 py-1 md:py-2 bg-green-500 hover:bg-green-600 text-white rounded md:rounded lg:rounded-md xl:rounded-lg text-xs md:text-sm  xl:text-lg uppercase`}>LogIn</Link>
+                    <Link to="/logIn" className={`px-2 ${user ? 'hidden' : 'flex'} md:px-3 xl:px-6 py-1 md:py-2 bg-green-500 hover:bg-green-600 text-white rounded md:rounded lg:rounded-md xl:rounded-lg text-xs md:text-sm  xl:text-lg uppercase`}>LogIn</Link>
                     <Link to="/register" className="px-2 md:px-3 xl:px-6 py-1 md:py-2 bg-sky-900 hover:bg-sky-950 text-white rounded md:rounded lg:rounded-md xl:rounded-lg text-xs md:text-sm  xl:text-lg uppercase">Register</Link>
                 </div>
 
             </div>
+
+            <Tooltip id="my-tooltip" />
 
         </div>
     );

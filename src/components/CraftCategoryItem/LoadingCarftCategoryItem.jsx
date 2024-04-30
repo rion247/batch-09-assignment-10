@@ -12,7 +12,7 @@ const LoadingCarftCategoryItem = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/categoryItems/${itemCategory}`)
+        fetch(`https://art-and-craft-store-server-side.vercel.app/categoryItems/${itemCategory}`)
             .then(response => response.json())
             .then(json => {
                 // console.log(json)

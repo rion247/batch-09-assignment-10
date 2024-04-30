@@ -16,7 +16,7 @@ const CraftCategorySection = () => {
 
         // console.log(data);
 
-        fetch('http://localhost:5000/addCraftCategoryItem', {
+        fetch('https://art-and-craft-store-server-side.vercel.app/addCraftCategoryItem', {
             method: 'POST',
             headers: {
                 "Content-type": "application/json"

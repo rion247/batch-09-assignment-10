@@ -16,7 +16,7 @@ const AddCraftItem = () => {
 
         console.log(data);
 
-        fetch('http://localhost:5000/crafts', {
+        fetch('https://art-and-craft-store-server-side.vercel.app/crafts', {
             method: 'POST',
             headers: {
                 "Content-type": "application/json"

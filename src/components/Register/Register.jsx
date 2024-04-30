@@ -45,7 +45,7 @@ const Register = () => {
                     .then(() => {
                         console.log('Profile Updated!');
 
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://art-and-craft-store-server-side.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 "Content-type": "application/json"

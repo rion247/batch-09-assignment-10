@@ -21,7 +21,7 @@ const UpdateProfile = () => {
         const { itemName, itemImageURL, itemSubcategory, itemProcessingTime, itemShortDescription, itemPrice, itemRating, itemCustomization, itemStock, email, name } = data;
 
 
-        fetch(`http://localhost:5000/updateItem/${craftItemDefaultData?._id}`, {
+        fetch(`https://art-and-craft-store-server-side.vercel.app/updateItem/${craftItemDefaultData?._id}`, {
            
         method: 'PUT',
             headers: {

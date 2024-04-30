@@ -3,6 +3,7 @@ import HeroBanner from "../HeroBanner/HeroBanner";
 import CraftItemsSection from "../CraftItemsSection/CraftItemsSection";
 import Footer from "../Footer/Footer";
 import CraftCategoryItem from "../CraftCategoryItem/CraftCategoryItem";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
     return (
@@ -19,6 +20,8 @@ const Home = () => {
             <CraftItemsSection/>
 
             <CraftCategoryItem></CraftCategoryItem>
+
+            <Banner></Banner>
 
             <Footer></Footer>
 
