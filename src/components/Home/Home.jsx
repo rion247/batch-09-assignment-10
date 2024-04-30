@@ -4,6 +4,7 @@ import CraftItemsSection from "../CraftItemsSection/CraftItemsSection";
 import Footer from "../Footer/Footer";
 import CraftCategoryItem from "../CraftCategoryItem/CraftCategoryItem";
 import Banner from "../Banner/Banner";
+import LatestBlog from "../LatestBlog/LatestBlog";
 
 const Home = () => {
     return (
@@ -20,6 +21,8 @@ const Home = () => {
             <CraftItemsSection/>
 
             <CraftCategoryItem></CraftCategoryItem>
+
+            <LatestBlog></LatestBlog>
 
             <Banner></Banner>
 

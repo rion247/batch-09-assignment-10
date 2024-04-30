@@ -1,18 +1,7 @@
 import Lottie from "lottie-react";
 import mobileAnimation from "../../../public/mobile.json"
 
-
-
 const Banner = () => {
-
-    // const defaultOptions = {
-    //     loop: true,
-    //     autoplay: true,
-    //     animationData: mobileAnimation,
-    //     rendererSettings: {
-    //       preserveAspectRatio: "xMidYMid slice"
-    //     }
-    //   };
 
     return (
         <div className="p-6 py-12 text-black">
