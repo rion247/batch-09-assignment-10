@@ -13,6 +13,10 @@ import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CraftViewDetailsPage from "../CraftItemsSection/CraftViewDetailsPage";
 import UpdateUserProfile from './../UpdateUserProfile/UpdateUserProfile';
+import CraftCategorySection from './../CraftCategorySection/CraftCategorySection';
+import CraftCategoryItem from "../CraftCategoryItem/CraftCategoryItem";
+import LoadingCarftCategoryItem from "../CraftCategoryItem/LoadingCarftCategoryItem";
+import CraftCategoryDetailsPage from "../CraftCategoryItem/CraftCategoryDetailsPage";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +62,19 @@ export const router = createBrowserRouter([
         path: "/craftItem/:id",
         element: <PrivateRoute><CraftViewDetailsPage /></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`)
+      },
+      {
+        path: "/craftCategoryItem",
+        element: <PrivateRoute><CraftCategorySection /></PrivateRoute>,
+      },
+      {
+        path: "/craftCategoryItems/:itemCategory",
+        element: <LoadingCarftCategoryItem />,
+      },
+      {
+        path: "craftCategoryItemsDetailsPage/:id",
+        element: <PrivateRoute><CraftCategoryDetailsPage /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/craftCategoryItemData/${params.id}`)
       },
 
     ],

@@ -13,7 +13,7 @@ const CraftItemsSection = () => {
     }, [])
 
     return (
-        <div className="max-w-[350px] p-4 mx-auto md:max-w-xl lg:max-w-4xl xl:max-w-7xl  mt-4 md:mt-6 lg:mt-8 xl:mt-32 font-poppins text-black mb-40">
+        <div className="max-w-[350px] p-4 mx-auto md:max-w-xl lg:max-w-4xl xl:max-w-7xl  mt-4 md:mt-6 lg:mt-8 xl:mt-32 font-poppins text-black mb-4 md:mb-8 lg:mb-10 xl:mb-12">
 
             <div className="space-y-2 text-center mb-10 md:mb-12 lg:mb-16 xl:mb-20">
                 <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-6">Craft Items Section</h2>
@@ -22,7 +22,7 @@ const CraftItemsSection = () => {
 
             <div className="grid grid-cols-1 gap-x-4 gap-y-6 xl:gap-y-8 lg:grid-cols-3">
                 {
-                    craftItems.map(item => <SingleCraftItem key={item._id} item={item}></SingleCraftItem>)
+                    craftItems.slice(0,6).map(item => <SingleCraftItem key={item._id} item={item}></SingleCraftItem>)
                 }
             </div>
 

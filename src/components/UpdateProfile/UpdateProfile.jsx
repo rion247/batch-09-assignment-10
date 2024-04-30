@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 const UpdateProfile = () => {
 
     const craftItemDefaultData = useLoaderData();
-    console.log(craftItemDefaultData?._id);
+    console.log(craftItemDefaultData);
 
     const {
         register,

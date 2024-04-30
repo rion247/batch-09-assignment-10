@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 const NavBar = () => {
 
     const { user, loading, userSignOut, } = useContext(AuthContext);
-    console.log(user);
 
     const [theme, SetTheme] = useState('light');
 
@@ -121,6 +120,7 @@ const NavBar = () => {
                         {
                             user && <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-36 md:w-52">
                                 <li><a>{user.displayName}</a></li>
+                                <li><Link to={`updateUserProfile/${user.email}`}>Update Profile</Link></li>
                                 <li onClick={handleLogOutButton}><a>Logout</a></li>
                             </ul>
                         }
