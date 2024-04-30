@@ -1,5 +1,4 @@
-import Lottie from "lottie-react";
-import mobileAnimation from "../../../public/mobile.json"
+// import Lottie from "lottie-react";
 
 const Banner = () => {
 
@@ -10,16 +9,16 @@ const Banner = () => {
                     <h2 className="text-center text-xl md:text-2xl lg:text-3xl tracking-tighter font-bold">
                         JOIN OUR MOBILE APP FOR FREE
                     </h2>
-                    <a href="#" rel="noreferrer noopener" className="px-5 lg:mt-2 py-3 rounded-md border bg-gray-50 text-gray-900 border-gray-400 inline-block mx-auto lg:mx-px">Download Now</a>
+                    <a href="#" rel="noreferrer noopener" className="px-5 lg:mt-2 py-3 rounded-md border bg-gray-50 text-gray-900 border-gray-400 inline-block mx-auto">Download Now</a>
                 </div>
 
-                <div className="w-1/4">
+                {/* <div className="w-1/4">
                     <Lottie
                         animationData={mobileAnimation}
                         height={10}
                         width={20}
                     />
-                </div>
+                </div> */}
 
             </div>
         </div>
