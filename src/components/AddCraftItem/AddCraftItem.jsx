@@ -7,6 +7,7 @@ const AddCraftItem = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
@@ -33,6 +34,7 @@ const AddCraftItem = () => {
                         icon: "success"
                     });
                 }
+                reset();
 
             })
     }

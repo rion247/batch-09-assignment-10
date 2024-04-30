@@ -18,6 +18,7 @@ const Register = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
@@ -40,6 +41,7 @@ const Register = () => {
             .then((userCredential) => {
                 console.log(userCredential.user);
                 toast.success('Congratulations, your account has been successfully created.');
+                reset();
                 navigate('/');
                 updateUserProfile(name, photoURL)
                     .then(() => {

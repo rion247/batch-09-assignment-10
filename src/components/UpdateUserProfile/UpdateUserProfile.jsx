@@ -18,6 +18,7 @@ const UpdateUserProfile = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -28,6 +29,7 @@ const UpdateUserProfile = () => {
         updateUserProfile(yourName, photoURL)
             .then(() => {
                 toast('User profile updated');
+                reset();
                 navigate(location?.state ? location.state : '/');
             }).catch((error) => {
                 console.log('An error occurred', error);

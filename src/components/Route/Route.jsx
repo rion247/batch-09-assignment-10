@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/updateUserProfile/:email",
-        element: <UpdateUserProfile />,
+        element: <PrivateRoute><UpdateUserProfile /></PrivateRoute>,
       },
       {
         path: "/craftItem/:id",

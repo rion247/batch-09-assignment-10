@@ -1,20 +1,37 @@
 import Lottie from "lottie-react";
+import mobileAnimation from "../../../public/mobile.json"
+
 
 
 const Banner = () => {
+
+    // const defaultOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: mobileAnimation,
+    //     rendererSettings: {
+    //       preserveAspectRatio: "xMidYMid slice"
+    //     }
+    //   };
+
     return (
-        <div className="p-6 py-12 bg-violet-400 text-gray-900">
-            <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row items-center justify-between">
-                    <h2 className="text-center text-6xl tracking-tighter font-bold">Up to
-                        <br className="sm:hidden" />50% Off
+        <div className="p-6 py-12 text-black">
+            <div className="mx-auto max-w-7xl flex justify-center gap-6 md:gap-12 lg:gap-20 items-center flex-col-reverse lg:flex-row-reverse">
+                <div className="flex flex-col items-start justify-start gap-6">
+                    <h2 className="text-center text-xl md:text-2xl lg:text-3xl tracking-tighter font-bold">
+                        JOIN OUR MOBILE APP FOR FREE
                     </h2>
-                    <div className="space-x-2 text-center py-2 lg:py-0">
-                        <span>Plus free shipping! Use code:</span>
-                        <span className="font-bold text-lg">MAMBA</span>
-                    </div>
-                    <a href="#" rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-gray-50 text-gray-900 border-gray-400">Shop Now</a>
+                    <a href="#" rel="noreferrer noopener" className="px-5 lg:mt-2 py-3 rounded-md border bg-gray-50 text-gray-900 border-gray-400 inline-block mx-auto lg:mx-px">Download Now</a>
                 </div>
+
+                <div className="w-1/4">
+                    <Lottie
+                        animationData={mobileAnimation}
+                        height={10}
+                        width={20}
+                    />
+                </div>
+
             </div>
         </div>
     );

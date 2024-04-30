@@ -13,6 +13,7 @@ const UpdateProfile = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
@@ -40,6 +41,8 @@ const UpdateProfile = () => {
                         icon: "success"
                     });
                 }
+
+                reset();
 
             })
     }
