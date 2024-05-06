@@ -23,7 +23,7 @@ const UpdateProfile = () => {
 
 
         fetch(`https://art-and-craft-store-server-side.vercel.app/updateItem/${craftItemDefaultData?._id}`, {
-           
+            
         method: 'PUT',
             headers: {
                 "Content-type": "application/json"

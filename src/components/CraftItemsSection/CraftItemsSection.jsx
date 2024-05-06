@@ -22,7 +22,7 @@ const CraftItemsSection = () => {
 
             <div className="grid grid-cols-1 gap-x-4 gap-y-6 xl:gap-y-8 lg:grid-cols-3">
                 {
-                    craftItems.slice(0,6).map(item => <SingleCraftItem key={item._id} item={item}></SingleCraftItem>)
+                    craftItems.map(item => <SingleCraftItem key={item._id} item={item}></SingleCraftItem>)
                 }
             </div>
 
